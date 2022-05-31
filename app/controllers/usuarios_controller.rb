@@ -43,9 +43,15 @@ class UsuariosController < ApplicationController
 
   def destroy
     @usuario = Usuario.find(params[:id])
-    @usuario.destroy
-    sign_out
-    redirect_to root_path
+
+    if current_usuario == @usuario
+      @usuario.destroy
+      sign_out
+    else
+      @usuario.destroy
+      redirect_to usuarios_path
+    end
+
 
 
   end
