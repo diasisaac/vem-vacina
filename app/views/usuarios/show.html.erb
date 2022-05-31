@@ -59,3 +59,5 @@
 
 <%= link_to 'Editar dados', edit_usuario_path(current_usuario)%>
 <%= button_to "Sair", sign_out_path, method: :delete %>
+<%= button_to "Destroy this usuario", @usuario, method: :delete %>
+<%= link_to 'Nova Vacinacao', new_usuario_vacinacao_path(:usuario_id => current_usuario)%>

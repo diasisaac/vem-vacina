@@ -8,10 +8,13 @@ class ApplicationController < ActionController::Base
     end
   
     def correct_usuario?
-      @usuario = Usuario.find(params[:id])
-      unless current_usuario == @usuario
-        redirect_to usuarios_path
+      if logged_in?
+        @usuario = Usuario.find(params[:id])
+        unless current_usuario == @usuario
+          redirect_to @usuario
+        end
+      else
+        redirect_to root_path
       end
     end
-  end
-  
+end

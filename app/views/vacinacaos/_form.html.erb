@@ -1,0 +1,52 @@
+<%= form_with(model: [@current_usuario, vacinacao]) do |form| %>
+  <% if vacinacao.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vacinacao.errors.count, "error") %> prohibited this vacinacao from being saved:</h2>
+
+      <ul>
+        <% vacinacao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :desc_local, style: "display: block" %>
+    <%= form.text_field :desc_local %>
+  </div>
+
+  <div>
+    <%= form.label :data, style: "display: block" %>
+    <%= form.date_field :data %>
+  </div>
+
+  <div>
+    <%= form.label :horario, style: "display: block" %>
+    <%= form.time_field :horario %>
+  </div>
+
+  <div>
+    <%= form.label :vacina_id, style: "display: block" %>
+    <%= form.collection_select(:vacina_id, Vacina.all, :id, :nome_vacina, {:selected => @vacinacao.vacina_id}, {class: "form-control"})%>
+
+  </div>
+
+  <% if current_usuario.Admin?  %>
+  <div>
+    <%= form.label :usuario_id, style: "display: block" %>
+    <%= form.text_field :usuario_id, value: params[:usuario_id] %>
+  </div>
+
+  <% else %>
+    <div>
+      <%= form.label :usuario_id, style: "display: block" %>
+      <%= form.hidden_field :usuario_id, value: params[:usuario_id] %>
+    </div>
+
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

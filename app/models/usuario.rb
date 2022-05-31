@@ -1,8 +1,9 @@
 class Usuario < ApplicationRecord
   has_secure_password
 
-  has_one :endereco
-  accepts_nested_attributes_for :endereco, allow_destroy: true,update_only: true
+  has_one :endereco, :dependent => :destroy
+  has_many :vacinacaos
+  accepts_nested_attributes_for :endereco, allow_destroy: true
 
 
   enum role: {Usuario: 0, Admin: 1}

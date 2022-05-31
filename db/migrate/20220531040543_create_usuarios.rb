@@ -1,7 +1,7 @@
 class CreateUsuarios < ActiveRecord::Migration[7.0]
   def change
     create_table :usuarios do |t|
-      t.integer :role
+      t.integer :role, default: 0
       t.string :nome_completo
       t.date :data_nascimento
       t.integer :cpf

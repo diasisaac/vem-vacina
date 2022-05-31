@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_vacina: MyString
+  num_lote: MyString
+  data_validade: 2022-05-31
+
+two:
+  nome_vacina: MyString
+  num_lote: MyString
+  data_validade: 2022-05-31

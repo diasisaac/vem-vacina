@@ -48,7 +48,7 @@
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
   </div>
 
  <%= form.fields_for :endereco do |endereco_form| %>
@@ -57,7 +57,6 @@
     Complemento  : <%= endereco_form.text_field :complemento %>
     Bairro  : <%= endereco_form.text_field :bairro %>
     Cep: <%= endereco_form.text_field :cep %>
-    Delete: <%= endereco_form.check_box :_destroy %>
   <% end %>
   
   <div class="actions">

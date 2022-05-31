@@ -42,11 +42,11 @@ class UsuariosController < ApplicationController
   end
 
   def destroy
-    if current_usuario.update(usuario_params)
-      @usuario.destroy
-      sign_out
-      redirect_to root_path
-    end
+    @usuario = Usuario.find(params[:id])
+    @usuario.destroy
+    sign_out
+    redirect_to root_path
+
 
   end
 
@@ -54,7 +54,7 @@ class UsuariosController < ApplicationController
 
 
   def usuario_params
-    params.require(:usuario).permit(:nome_completo, :data_nascimento,:cpf,:nome_mae, :telefone, :email, :num_sus, :password, {:endereco_attributes => [:logradouro, :complemento, :cep, :bairro, :cidade]})
+    params.require(:usuario).permit(:nome_completo, :data_nascimento,:cpf,:nome_mae, :telefone, :email, :num_sus, :password, {:endereco_attributes => [:id, :logradouro, :complemento, :cep, :bairro, :cidade]})
 
   end
 
