@@ -18,7 +18,7 @@ class Usuario < ApplicationRecord
 
 
   def valida_data
-    if  data_nascimento.present? && data_nascimento > Date.today
+    if  data_nascimento.present? && data_nascimento > Time.zone.today
       errors.add(:data, " A data deve ser de hoje ou anterior")
     end
   end
