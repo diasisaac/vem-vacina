@@ -5,6 +5,6 @@
 <br>
 
 <div>
-  <%= link_to "Show this vacinacao", @vacinacao %> |
-  <%= link_to "Back to vacinacaos", vacinacaos_path %>
+  <%= link_to "Show this vacinacao", usuario_vacinacao_path(:usuario_id => current_usuario,:id => @vacinacao)%> |
+  <%= link_to "Back to vacinacaos", usuario_vacinacaos_path(:usuario_id => current_usuario) %>
 </div>

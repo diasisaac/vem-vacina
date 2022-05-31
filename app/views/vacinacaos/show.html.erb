@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this vacinacao", edit_usuario_vacinacao_path(:usuario_id => current_usuario,:id => @vacinacao) %> |
-  <%= link_to "Back to vacinacaos", usuario_vacinacao_path(:usuario_id => current_usuario,:id => @vacinacao) %>
+  <%= link_to "Back to vacinacaos", usuario_vacinacaos_path(:usuario_id => current_usuario,:id => @vacinacao) %>
 
   <%= button_to "Destroy this vacinacao", usuario_vacinacao_path(:usuario_id => current_usuario,:id => @vacinacao), method: :delete %>
 </div>
