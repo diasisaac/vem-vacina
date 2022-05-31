@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_040543) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_043140) do
+  create_table "enderecos", force: :cascade do |t|
+    t.integer "cep"
+    t.string "cidade"
+    t.string "bairro"
+    t.string "logradouro"
+    t.string "complemento"
+    t.integer "usuario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_enderecos_on_usuario_id"
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.integer "role"
     t.string "nome_completo"
@@ -25,4 +37,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_040543) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "enderecos", "usuarios"
 end

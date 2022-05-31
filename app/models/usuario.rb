@@ -1,6 +1,10 @@
 class Usuario < ApplicationRecord
   has_secure_password
 
+  has_one :endereco
+  accepts_nested_attributes_for :endereco, allow_destroy: true,update_only: true
+
+
   enum role: {Usuario: 0, Admin: 1}
 
   validates :nome_completo, presence: true, length: {minimum:5}, numericality: false

@@ -30,5 +30,32 @@
   <%= current_usuario.email %>
 </p>
 
+
+<p>
+  <strong>CEP:</strong>
+  <%= current_usuario.endereco.cep %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= current_usuario.endereco.cidade %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= current_usuario.endereco.bairro %>
+</p>
+
+<p>
+  <strong>Logradouro:</strong>
+  <%= current_usuario.endereco.logradouro %>
+</p>
+
+<p>
+  <strong>Completo:</strong>
+  <%= current_usuario.endereco.complemento %>
+</p>
+
+
 <%= link_to 'Editar dados', edit_usuario_path(current_usuario)%>
 <%= button_to "Sair", sign_out_path, method: :delete %>
