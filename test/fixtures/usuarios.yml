@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: 1
+  nome_completo: MyString
+  data_nascimento: 2022-05-31
+  cpf: 1
+  nome_mae: MyString
+  telefone: 1
+  email: MyString
+  password_digest: MyString
+  num_sus: 1
+
+two:
+  role: 1
+  nome_completo: MyString
+  data_nascimento: 2022-05-31
+  cpf: 1
+  nome_mae: MyString
+  telefone: 1
+  email: MyString
+  password_digest: MyString
+  num_sus: 1
