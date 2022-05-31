@@ -1,0 +1,34 @@
+<h2>Show de Usuario</h2>
+
+<p>
+  <strong>Nome Completo:</strong>
+  <%= current_usuario.nome_completo %>
+</p>
+
+<p>
+  <strong>Data de Nascimento:</strong>
+  <%= current_usuario.data_nascimento %>
+</p>
+
+<p>
+  <strong>Nome da mãe:</strong>
+  <%= current_usuario.nome_mae %>
+</p>
+
+<p>
+  <strong>CPF:</strong>
+  <%= current_usuario.cpf %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= current_usuario.telefone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_usuario.email %>
+</p>
+
+<%= link_to 'Editar dados', edit_usuario_path(current_usuario)%>
+<%= button_to "Sair", sign_out_path, method: :delete %>
