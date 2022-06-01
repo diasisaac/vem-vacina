@@ -51,6 +51,11 @@
     <%= form.password_field :password %>
   </div>
 
+  <div>
+    <%= form.label :role, style: "display: block" %>
+    <%= form.select :role, options_for_select([:Usuario, :Admin]) %>
+  </div>
+
  <%= form.fields_for :endereco do |endereco_form| %>
     Cidade  : <%= endereco_form.text_field :cidade %>
     Logradouro  : <%= endereco_form.text_field :logradouro %>
