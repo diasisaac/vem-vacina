@@ -5,7 +5,15 @@ class VacinacaosController < ApplicationController
 
   # GET /vacinacaos or /vacinacaos.json
   def index
-    @vacinacaos = Vacinacao.all
+
+    if current_usuario.Admin?
+      @vacinacaos = Vacinacao.all
+    else
+      @vacinacaos = current_usuario.vacinacaos
+    end
+
+
+
   end
 
   # GET /vacinacaos/1 or /vacinacaos/1.json
@@ -30,7 +38,7 @@ class VacinacaosController < ApplicationController
 
     respond_to do |format|
       if @vacinacao.save
-        format.html { redirect_to usuario_vacinacao_path, notice: "Vacinacao was successfully created." }
+        format.html { redirect_to usuario_vacinacao_path(:usuario_id => current_usuario,:id => @vacinacao), notice: "Vacinacao was successfully created." }
         format.json { render :show, status: :created, location: @vacinacao }
       else
         format.html { render :new, status: :unprocessable_entity }

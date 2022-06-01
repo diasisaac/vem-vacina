@@ -1,8 +1,10 @@
 class VacinasController < ApplicationController
   before_action :set_vacina, only: %i[ show edit update destroy ]
+  before_action :authorize_admin
 
   # GET /vacinas or /vacinas.json
   def index
+
     @vacinas = Vacina.all
   end
 
