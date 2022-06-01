@@ -28,7 +28,7 @@ When('Eu clico em cadastrar') do
   click_button 'Create Usuario'
 end
 
-Then('Eu vejo a mensagem de que o usuario foi cadastrado') do
+Then('Eu vejo a mensagem de que o cadastro foi efeituado') do
   expect(page).to have_content("Usuario cadastrado")
 end
 
