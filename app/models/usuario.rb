@@ -5,9 +5,6 @@ class Usuario < ApplicationRecord
   has_many :vacinacaos
   accepts_nested_attributes_for :endereco, allow_destroy: true
 
-
-  enum role: {Usuario: 0, Admin: 1}
-
   validates :nome_completo, presence: true, length: {minimum:5}, numericality: false
   validate :valida_data
   validates :cpf, presence: true, uniqueness: true, length: {is: 11}
@@ -17,15 +14,18 @@ class Usuario < ApplicationRecord
   validates :telefone, presence: true, length: {minimum:8}, numericality: { only_integer: true }
   validates :password, presence: true, length: {minimum:6}
 
-
   def valida_data
     if  data_nascimento.present? && data_nascimento > Time.zone.today
       errors.add(:data, " A data deve ser de hoje ou anterior")
     end
   end
 
+  # Roles available to each user
+  enum role: { Usuario: 0, Admin: 1 }
+  after_initialize :set_default_role, if: :new_record?
+
   def set_default_role
-    self.role ||= :user
+    self.role ||= :usuario
   end
 
 end
