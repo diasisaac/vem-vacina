@@ -24,7 +24,7 @@ Given('Eu preencho o cadastro como role {string}, nome completo {string}, data d
 
 end
 
-When('Eu clico em cadastrar') do
+When('Eu clico no botao de cadastrar') do
   click_button 'Create Usuario'
 end
 
@@ -66,7 +66,7 @@ Given('Eu preencho login como cpf {string} e senha com {string}') do |cpf, senha
   fill_in 'session[password]', :with => senha
 end
 
-When('Eu Clico em entrar') do
+When('Eu Clico no botao de entrar') do
   click_button 'Entrar'
 end
 
