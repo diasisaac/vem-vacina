@@ -73,3 +73,8 @@ end
 Then('Eu vejo que estou na pagina do meu usuario') do
   expect(page).to have_content("Show de Usuario")
 end
+
+
+Then('Eu vejo uma mensagem de erro e exibida') do
+  expect(page).to have_content('Cpf is the wrong length (should be 11 characters)')
+end
