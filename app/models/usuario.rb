@@ -11,7 +11,7 @@ class Usuario < ApplicationRecord
   validates :nome_mae, presence: true, length: {minimum:5}
   validates :num_sus, presence: true, length: {minimum:6}
   validates :email, presence: true, length:{maximum: 255}, uniqueness:{case_sensitive: true}
-  validates :telefone, presence: true, length: {minimum:8}, numericality: { only_integer: true }
+  validates :telefone, presence: true, length: {minimum:8}
   validates :password, presence: true, length: {minimum:6}
 
   def valida_data

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_195242) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_103126) do
   create_table "enderecos", force: :cascade do |t|
     t.integer "cep"
     t.string "cidade"
@@ -27,12 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_195242) do
     t.integer "role", default: 0
     t.string "nome_completo"
     t.date "data_nascimento"
-    t.integer "cpf"
+    t.string "cpf"
     t.string "nome_mae"
-    t.integer "telefone"
+    t.string "telefone"
     t.string "email"
     t.string "password_digest"
-    t.integer "num_sus"
+    t.string "num_sus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
