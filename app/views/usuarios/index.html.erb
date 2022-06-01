@@ -7,7 +7,7 @@
     <th></th>
   </tr>
   </thead>
-  <tbody>
+
   <% @usuarios.each do |user| %>
     <tr>
       <td><%= user.cpf %></td>
@@ -15,5 +15,8 @@
       <td><%= link_to "Show", user %></td>
     </tr>
   <%end%>
+  <%= link_to "Ver vacinacaos", usuario_vacinacaos_path(:usuario_id => current_usuario,:id => @vacinacao) %>
+  </br>
+  <%= link_to "Ver vacinas", vacinas_path %>
   </tbody>
 </table>
